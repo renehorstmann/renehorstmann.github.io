@@ -115,9 +115,9 @@ var Module = typeof Module !== 'undefined' ? Module : {};
         if (!check) throw msg + new Error().stack;
       }
   Module['FS_createPath']("/", "res", true, true);
-Module['FS_createPath']("/res", "levels", true, true);
-Module['FS_createPath']("/res", "tiles", true, true);
 Module['FS_createPath']("/res", "backgrounds", true, true);
+Module['FS_createPath']("/res", "tiles", true, true);
+Module['FS_createPath']("/res", "levels", true, true);
 Module['FS_createPath']("/res", "r", true, true);
 
           /** @constructor */
@@ -191,7 +191,7 @@ Module['FS_createPath']("/res", "r", true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/res/airstroke.png", "start": 0, "end": 2071, "audio": 0}, {"filename": "/res/airstroke_naked.png", "start": 2071, "end": 3820, "audio": 0}, {"filename": "/res/dead_overlay.png", "start": 3820, "end": 6628, "audio": 0}, {"filename": "/res/hare_dark.png", "start": 6628, "end": 10048, "audio": 0}, {"filename": "/res/hud_background.png", "start": 10048, "end": 10233, "audio": 0}, {"filename": "/res/hare.png", "start": 10233, "end": 13957, "audio": 0}, {"filename": "/res/levels/level_01.png", "start": 13957, "end": 14357, "audio": 0}, {"filename": "/res/tiles/tile_01.png", "start": 14357, "end": 17929, "audio": 0}, {"filename": "/res/backgrounds/greenhills.png", "start": 17929, "end": 21421, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 21421, "end": 22493, "audio": 0}, {"filename": "/res/r/batch.fsh", "start": 22493, "end": 22656, "audio": 0}, {"filename": "/res/r/single.vsh", "start": 22656, "end": 23386, "audio": 0}, {"filename": "/res/r/font55.png", "start": 23386, "end": 23974, "audio": 0}, {"filename": "/res/r/batch.vsh", "start": 23974, "end": 24848, "audio": 0}, {"filename": "/res/r/particle.fsh", "start": 24848, "end": 25011, "audio": 0}, {"filename": "/res/r/particle.vsh", "start": 25011, "end": 27048, "audio": 0}, {"filename": "/res/r/single.fsh", "start": 27048, "end": 27211, "audio": 0}], "remote_package_size": 27211, "package_uuid": "f98cba70-8124-4527-9bec-91ac05a5a034"});
+   loadPackage({"files": [{"filename": "/res/hare.png", "start": 0, "end": 3724, "audio": 0}, {"filename": "/res/dead_overlay.png", "start": 3724, "end": 6532, "audio": 0}, {"filename": "/res/hare_dark.png", "start": 6532, "end": 9952, "audio": 0}, {"filename": "/res/airstroke_naked.png", "start": 9952, "end": 11701, "audio": 0}, {"filename": "/res/hud_background.png", "start": 11701, "end": 11886, "audio": 0}, {"filename": "/res/airstroke.png", "start": 11886, "end": 13957, "audio": 0}, {"filename": "/res/backgrounds/greenhills.png", "start": 13957, "end": 17449, "audio": 0}, {"filename": "/res/tiles/tile_01.png", "start": 17449, "end": 21021, "audio": 0}, {"filename": "/res/levels/level_01.png", "start": 21021, "end": 21421, "audio": 0}, {"filename": "/res/r/font55.png", "start": 21421, "end": 22009, "audio": 0}, {"filename": "/res/r/batch.vsh", "start": 22009, "end": 22883, "audio": 0}, {"filename": "/res/r/single.fsh", "start": 22883, "end": 23046, "audio": 0}, {"filename": "/res/r/single.vsh", "start": 23046, "end": 23776, "audio": 0}, {"filename": "/res/r/particle.fsh", "start": 23776, "end": 23939, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 23939, "end": 25011, "audio": 0}, {"filename": "/res/r/particle.vsh", "start": 25011, "end": 27145, "audio": 0}, {"filename": "/res/r/batch.fsh", "start": 27145, "end": 27308, "audio": 0}], "remote_package_size": 27308, "package_uuid": "85eb9030-d51e-4550-bf2f-a774b604e48d"});
   
   })();
   
