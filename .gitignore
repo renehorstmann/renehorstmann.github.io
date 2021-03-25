@@ -153,5 +153,6 @@ depend.internal
 cmake.check_cache
 C.includecache
 
-## some specific
-some
+## specific
+compile
+
