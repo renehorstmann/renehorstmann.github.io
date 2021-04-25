@@ -191,7 +191,7 @@ Module['FS_createPath']("/res", "levels", true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/res/airstroke_naked.png", "start": 0, "end": 1749, "audio": 0}, {"filename": "/res/hare.png", "start": 1749, "end": 9960, "audio": 0}, {"filename": "/res/carrot_btn.png", "start": 9960, "end": 10614, "audio": 0}, {"filename": "/res/hud_background.png", "start": 10614, "end": 24142, "audio": 0}, {"filename": "/res/dead_overlay.png", "start": 24142, "end": 26950, "audio": 0}, {"filename": "/res/speechbubble.png", "start": 26950, "end": 27344, "audio": 0}, {"filename": "/res/carrot_mini.png", "start": 27344, "end": 27528, "audio": 0}, {"filename": "/res/carrot.png", "start": 27528, "end": 28130, "audio": 0}, {"filename": "/res/goal_flag.png", "start": 28130, "end": 29895, "audio": 0}, {"filename": "/res/flag.png", "start": 29895, "end": 31096, "audio": 0}, {"filename": "/res/airstroke.png", "start": 31096, "end": 33167, "audio": 0}, {"filename": "/res/hud_tiles.png", "start": 33167, "end": 33570, "audio": 0}, {"filename": "/res/butterfly.png", "start": 33570, "end": 34127, "audio": 0}, {"filename": "/res/carrot_big.png", "start": 34127, "end": 34723, "audio": 0}, {"filename": "/res/emojifont.png", "start": 34723, "end": 36654, "audio": 0}, {"filename": "/res/hare_flower.png", "start": 36654, "end": 44903, "audio": 0}, {"filename": "/res/mirror.png", "start": 44903, "end": 45460, "audio": 0}, {"filename": "/res/ice_block.png", "start": 45460, "end": 46185, "audio": 0}, {"filename": "/res/backgrounds/greenhills.png", "start": 46185, "end": 51278, "audio": 0}, {"filename": "/res/backgrounds/blueblocks.png", "start": 51278, "end": 51991, "audio": 0}, {"filename": "/res/r/single.glsl", "start": 51991, "end": 53499, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 53499, "end": 54571, "audio": 0}, {"filename": "/res/r/singlerefract.glsl", "start": 54571, "end": 58148, "audio": 0}, {"filename": "/res/r/particlerefract.glsl", "start": 58148, "end": 63352, "audio": 0}, {"filename": "/res/r/batchrefract.glsl", "start": 63352, "end": 67100, "audio": 0}, {"filename": "/res/r/font55.png", "start": 67100, "end": 67633, "audio": 0}, {"filename": "/res/r/particle.glsl", "start": 67633, "end": 70767, "audio": 0}, {"filename": "/res/r/batch.glsl", "start": 70767, "end": 72446, "audio": 0}, {"filename": "/res/tiles/tile_01.png", "start": 72446, "end": 73503, "audio": 0}, {"filename": "/res/tiles/tile_02.png", "start": 73503, "end": 77673, "audio": 0}, {"filename": "/res/tiles/tile_03.png", "start": 77673, "end": 80083, "audio": 0}, {"filename": "/res/tiles/tile_04.png", "start": 80083, "end": 83562, "audio": 0}, {"filename": "/res/levels/level_00.png", "start": 83562, "end": 84165, "audio": 0}, {"filename": "/res/levels/level_01.png", "start": 84165, "end": 85574, "audio": 0}], "remote_package_size": 85574, "package_uuid": "84bf5642-2683-427a-82b1-ac478899e7fc"});
+   loadPackage({"files": [{"filename": "/res/airstroke_naked.png", "start": 0, "end": 1749, "audio": 0}, {"filename": "/res/hare.png", "start": 1749, "end": 9960, "audio": 0}, {"filename": "/res/carrot_btn.png", "start": 9960, "end": 10614, "audio": 0}, {"filename": "/res/hud_background.png", "start": 10614, "end": 24142, "audio": 0}, {"filename": "/res/dead_overlay.png", "start": 24142, "end": 26950, "audio": 0}, {"filename": "/res/speechbubble.png", "start": 26950, "end": 27344, "audio": 0}, {"filename": "/res/carrot_mini.png", "start": 27344, "end": 27528, "audio": 0}, {"filename": "/res/carrot.png", "start": 27528, "end": 28130, "audio": 0}, {"filename": "/res/goal_flag.png", "start": 28130, "end": 29895, "audio": 0}, {"filename": "/res/flag.png", "start": 29895, "end": 31096, "audio": 0}, {"filename": "/res/airstroke.png", "start": 31096, "end": 33167, "audio": 0}, {"filename": "/res/hud_tiles.png", "start": 33167, "end": 33570, "audio": 0}, {"filename": "/res/butterfly.png", "start": 33570, "end": 34127, "audio": 0}, {"filename": "/res/carrot_big.png", "start": 34127, "end": 34723, "audio": 0}, {"filename": "/res/emojifont.png", "start": 34723, "end": 36654, "audio": 0}, {"filename": "/res/hare_flower.png", "start": 36654, "end": 44903, "audio": 0}, {"filename": "/res/mirror.png", "start": 44903, "end": 45460, "audio": 0}, {"filename": "/res/ice_block.png", "start": 45460, "end": 46185, "audio": 0}, {"filename": "/res/backgrounds/greenhills.png", "start": 46185, "end": 51278, "audio": 0}, {"filename": "/res/backgrounds/blueblocks.png", "start": 51278, "end": 51991, "audio": 0}, {"filename": "/res/r/single.glsl", "start": 51991, "end": 53499, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 53499, "end": 54571, "audio": 0}, {"filename": "/res/r/singlerefract.glsl", "start": 54571, "end": 58148, "audio": 0}, {"filename": "/res/r/particlerefract.glsl", "start": 58148, "end": 63352, "audio": 0}, {"filename": "/res/r/batchrefract.glsl", "start": 63352, "end": 67100, "audio": 0}, {"filename": "/res/r/font55.png", "start": 67100, "end": 67633, "audio": 0}, {"filename": "/res/r/particle.glsl", "start": 67633, "end": 70767, "audio": 0}, {"filename": "/res/r/batch.glsl", "start": 70767, "end": 72446, "audio": 0}, {"filename": "/res/tiles/tile_01.png", "start": 72446, "end": 73503, "audio": 0}, {"filename": "/res/tiles/tile_02.png", "start": 73503, "end": 77673, "audio": 0}, {"filename": "/res/tiles/tile_03.png", "start": 77673, "end": 80083, "audio": 0}, {"filename": "/res/tiles/tile_04.png", "start": 80083, "end": 83562, "audio": 0}, {"filename": "/res/levels/level_00.png", "start": 83562, "end": 84165, "audio": 0}, {"filename": "/res/levels/level_01.png", "start": 84165, "end": 85574, "audio": 0}], "remote_package_size": 85574, "package_uuid": "8d07929a-9d25-4aeb-ad85-450105cfcc67"});
   
   })();
   
@@ -9126,10 +9126,6 @@ var ASM_CONSTS = {
       HEAPU8.copyWithin(dest, src, src + num);
     }
 
-  function _emscripten_pause_main_loop() {
-      Browser.mainLoop.pause();
-    }
-
   function doRequestFullscreen(target, strategy) {
       if (!JSEvents.fullscreenEnabled()) return -1;
       target = findEventTarget(target);
@@ -9251,10 +9247,6 @@ var ASM_CONSTS = {
       }
       err('Failed to grow the heap from ' + oldSize + ' bytes to ' + newSize + ' bytes, not enough memory!');
       return false;
-    }
-
-  function _emscripten_resume_main_loop() {
-      Browser.mainLoop.resume();
     }
 
   function _emscripten_sample_gamepad_data() {
@@ -11346,11 +11338,9 @@ var asmLibraryArg = {
   "emscripten_has_asyncify": _emscripten_has_asyncify,
   "emscripten_longjmp": _emscripten_longjmp,
   "emscripten_memcpy_big": _emscripten_memcpy_big,
-  "emscripten_pause_main_loop": _emscripten_pause_main_loop,
   "emscripten_request_fullscreen_strategy": _emscripten_request_fullscreen_strategy,
   "emscripten_request_pointerlock": _emscripten_request_pointerlock,
   "emscripten_resize_heap": _emscripten_resize_heap,
-  "emscripten_resume_main_loop": _emscripten_resume_main_loop,
   "emscripten_sample_gamepad_data": _emscripten_sample_gamepad_data,
   "emscripten_set_beforeunload_callback_on_thread": _emscripten_set_beforeunload_callback_on_thread,
   "emscripten_set_blur_callback_on_thread": _emscripten_set_blur_callback_on_thread,
@@ -11485,10 +11475,10 @@ var _memset = Module["_memset"] = createExportWrapper("memset");
 var _main = Module["_main"] = createExportWrapper("main");
 
 /** @type {function(...*):?} */
-var _fflush = Module["_fflush"] = createExportWrapper("fflush");
+var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
 
 /** @type {function(...*):?} */
-var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
+var _fflush = Module["_fflush"] = createExportWrapper("fflush");
 
 /** @type {function(...*):?} */
 var _fileno = Module["_fileno"] = createExportWrapper("fileno");
