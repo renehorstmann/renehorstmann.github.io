@@ -188,7 +188,7 @@ Module['FS_createPath']("/res", "r", true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/res/sound_shark.wav", "start": 0, "end": 81642, "audio": 1}, {"filename": "/res/shark.png", "start": 81642, "end": 83672, "audio": 0}, {"filename": "/res/ring.png", "start": 83672, "end": 84196, "audio": 0}, {"filename": "/res/sound_feed.wav", "start": 84196, "end": 451000, "audio": 1}, {"filename": "/res/background.png", "start": 451000, "end": 453391, "audio": 0}, {"filename": "/res/sound_activate.wav", "start": 453391, "end": 729971, "audio": 1}, {"filename": "/res/sound_bubbles.ogg", "start": 729971, "end": 977438, "audio": 1}, {"filename": "/res/sound_gameover.wav", "start": 977438, "end": 1080518, "audio": 1}, {"filename": "/res/fish.png", "start": 1080518, "end": 1081265, "audio": 0}, {"filename": "/res/bubble.png", "start": 1081265, "end": 1081520, "audio": 0}, {"filename": "/res/retry.png", "start": 1081520, "end": 1082748, "audio": 0}, {"filename": "/res/food.png", "start": 1082748, "end": 1083318, "audio": 0}, {"filename": "/res/r/single.glsl", "start": 1083318, "end": 1084826, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 1084826, "end": 1085898, "audio": 0}, {"filename": "/res/r/singlerefract.glsl", "start": 1085898, "end": 1089475, "audio": 0}, {"filename": "/res/r/particlerefract.glsl", "start": 1089475, "end": 1094679, "audio": 0}, {"filename": "/res/r/batchrefract.glsl", "start": 1094679, "end": 1098427, "audio": 0}, {"filename": "/res/r/font85.png", "start": 1098427, "end": 1099479, "audio": 0}, {"filename": "/res/r/font55.png", "start": 1099479, "end": 1100012, "audio": 0}, {"filename": "/res/r/particle.glsl", "start": 1100012, "end": 1103146, "audio": 0}, {"filename": "/res/r/batch.glsl", "start": 1103146, "end": 1104825, "audio": 0}], "remote_package_size": 1104825, "package_uuid": "7bf23ffd-761d-4dfd-8858-d9761fba46fa"});
+   loadPackage({"files": [{"filename": "/res/textinput_key_shift.png", "start": 0, "end": 512, "audio": 0}, {"filename": "/res/sound_shark.wav", "start": 512, "end": 82154, "audio": 1}, {"filename": "/res/shark.png", "start": 82154, "end": 84184, "audio": 0}, {"filename": "/res/textinput_key_special.png", "start": 84184, "end": 84877, "audio": 0}, {"filename": "/res/ring.png", "start": 84877, "end": 85401, "audio": 0}, {"filename": "/res/textinput_key.png", "start": 85401, "end": 85671, "audio": 0}, {"filename": "/res/sound_feed.wav", "start": 85671, "end": 452475, "audio": 1}, {"filename": "/res/background.png", "start": 452475, "end": 454866, "audio": 0}, {"filename": "/res/sound_activate.wav", "start": 454866, "end": 731446, "audio": 1}, {"filename": "/res/sound_bubbles.ogg", "start": 731446, "end": 978913, "audio": 1}, {"filename": "/res/play.png", "start": 978913, "end": 980082, "audio": 0}, {"filename": "/res/sound_gameover.wav", "start": 980082, "end": 1083162, "audio": 1}, {"filename": "/res/fish.png", "start": 1083162, "end": 1083909, "audio": 0}, {"filename": "/res/textinput_key_space.png", "start": 1083909, "end": 1084249, "audio": 0}, {"filename": "/res/bubble.png", "start": 1084249, "end": 1084504, "audio": 0}, {"filename": "/res/showscore_btns.png", "start": 1084504, "end": 1085166, "audio": 0}, {"filename": "/res/retry.png", "start": 1085166, "end": 1086394, "audio": 0}, {"filename": "/res/food.png", "start": 1086394, "end": 1086964, "audio": 0}, {"filename": "/res/r/single.glsl", "start": 1086964, "end": 1088472, "audio": 0}, {"filename": "/res/r/someLICENSE", "start": 1088472, "end": 1089544, "audio": 0}, {"filename": "/res/r/singlerefract.glsl", "start": 1089544, "end": 1093121, "audio": 0}, {"filename": "/res/r/particlerefract.glsl", "start": 1093121, "end": 1098325, "audio": 0}, {"filename": "/res/r/batchrefract.glsl", "start": 1098325, "end": 1102073, "audio": 0}, {"filename": "/res/r/font85.png", "start": 1102073, "end": 1103125, "audio": 0}, {"filename": "/res/r/font55.png", "start": 1103125, "end": 1103658, "audio": 0}, {"filename": "/res/r/particle.glsl", "start": 1103658, "end": 1106792, "audio": 0}, {"filename": "/res/r/batch.glsl", "start": 1106792, "end": 1108471, "audio": 0}], "remote_package_size": 1108471, "package_uuid": "de082d17-2062-4214-bd44-500a9b9f89ac"});
   
   })();
   
@@ -514,7 +514,7 @@ if (!Object.getOwnPropertyDescriptor(Module, 'setWindowTitle')) {
     }
   });
 }
-var IDBFS = 'IDBFS is no longer included by default; build with -lidbfs.js';
+
 var PROXYFS = 'PROXYFS is no longer included by default; build with -lproxyfs.js';
 var WORKERFS = 'WORKERFS is no longer included by default; build with -lworkerfs.js';
 var NODEFS = 'NODEFS is no longer included by default; build with -lnodefs.js';
@@ -1888,28 +1888,34 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  165012: function() {set_error_img();},  
- 165029: function() {set_error_img();},  
- 165046: function() {set_error_img();},  
- 165063: function($0) {var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return allocate(intArrayFromString(reply), 'i8', ALLOC_NORMAL);},  
- 165288: function($0, $1, $2) {var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Module['createContext'](Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels >> 2; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); return 0;},  
- 166743: function($0, $1, $2, $3, $4) {var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels >> 2; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf;},  
- 167732: function($0) {if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } return 0;},  
- 167825: function() {if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; }},  
- 167894: function() {return screen.width;},  
- 167919: function() {return screen.height;},  
- 167945: function() {return window.innerWidth;},  
- 167975: function() {return window.innerHeight;},  
- 168006: function($0) {if (typeof setWindowTitle !== 'undefined') { setWindowTitle(UTF8ToString($0)); } return 0;},  
- 168101: function() {if (typeof(AudioContext) !== 'undefined') { return 1; } else if (typeof(webkitAudioContext) !== 'undefined') { return 1; } return 0;},  
- 168238: function() {if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return 1; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return 1; } return 0;},  
- 168462: function($0) {if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { autoResumeAudioContext(SDL2.audioContext); } } return SDL2.audioContext === undefined ? -1 : 0;},  
- 168955: function() {var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate;},  
- 169023: function($0, $1, $2, $3) {var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearTimeout(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vi', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vi', $2, [$3]); }; SDL2.capture.silenceTimer = setTimeout(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); }},  
- 170675: function($0, $1, $2, $3) {var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vi', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']);},  
- 171085: function($0, $1) {var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } }},  
- 171690: function($0, $1) {var SDL2 = Module['SDL2']; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[$0 + ((j*numChannels + c) << 2) >> 2]; } }},  
- 172170: function($0) {var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearTimeout(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } SDL2.capture.stream = undefined; } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); SDL2.capture.scriptProcessorNode = undefined; } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); SDL2.capture.mediaStreamNode = undefined; } if (SDL2.capture.silenceBuffer !== undefined) { SDL2.capture.silenceBuffer = undefined } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); SDL2.audio.scriptProcessorNode = undefined; } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; }}
+  170236: function() {FS.mkdir('/savestate'); FS.mount(IDBFS, {}, '/savestate'); e_io_idbfs_synced = false;},  
+ 170322: function() {e_io_idbfs_synced = false; FS.syncfs(true, function (err) { assert(!err); e_io_idbfs_synced = true; });},  
+ 170426: function() {if(e_io_idbfs_synced) { ccall('e_io_idbfs_synced', 'v'); }},  
+ 170485: function() {e_io_idbfs_synced = false; FS.syncfs(false, function (err) { assert(!err); e_io_idbfs_synced = true; });},  
+ 170590: function() {if(e_io_idbfs_synced) { ccall('e_io_idbfs_synced', 'v'); }},  
+ 170649: function() {set_exit_failure_error_msg();},  
+ 170679: function() {set_error_img();},  
+ 170696: function() {set_exit_failure_error_msg();},  
+ 170726: function() {set_exit_failure_error_msg();},  
+ 170756: function($0) {var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return allocate(intArrayFromString(reply), 'i8', ALLOC_NORMAL);},  
+ 170981: function($0, $1, $2) {var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Module['createContext'](Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels >> 2; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); return 0;},  
+ 172436: function($0, $1, $2, $3, $4) {var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels >> 2; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf;},  
+ 173425: function($0) {if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } return 0;},  
+ 173518: function() {if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; }},  
+ 173587: function() {return screen.width;},  
+ 173612: function() {return screen.height;},  
+ 173638: function() {return window.innerWidth;},  
+ 173668: function() {return window.innerHeight;},  
+ 173699: function($0) {if (typeof setWindowTitle !== 'undefined') { setWindowTitle(UTF8ToString($0)); } return 0;},  
+ 173794: function() {if (typeof(AudioContext) !== 'undefined') { return 1; } else if (typeof(webkitAudioContext) !== 'undefined') { return 1; } return 0;},  
+ 173931: function() {if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return 1; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return 1; } return 0;},  
+ 174155: function($0) {if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { autoResumeAudioContext(SDL2.audioContext); } } return SDL2.audioContext === undefined ? -1 : 0;},  
+ 174648: function() {var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate;},  
+ 174716: function($0, $1, $2, $3) {var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearTimeout(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vi', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vi', $2, [$3]); }; SDL2.capture.silenceTimer = setTimeout(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); }},  
+ 176368: function($0, $1, $2, $3) {var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vi', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']);},  
+ 176778: function($0, $1) {var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } }},  
+ 177383: function($0, $1) {var SDL2 = Module['SDL2']; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[$0 + ((j*numChannels + c) << 2) >> 2]; } }},  
+ 177863: function($0) {var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearTimeout(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } SDL2.capture.stream = undefined; } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); SDL2.capture.scriptProcessorNode = undefined; } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); SDL2.capture.mediaStreamNode = undefined; } if (SDL2.capture.silenceBuffer !== undefined) { SDL2.capture.silenceBuffer = undefined } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); SDL2.audio.scriptProcessorNode = undefined; } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; }}
 };
 
 
@@ -2700,6 +2706,285 @@ var ASM_CONSTS = {
           // should we check if bytesWritten and length are the same?
           return 0;
         }}};
+  
+  var IDBFS={dbs:{},indexedDB:function() {
+        if (typeof indexedDB !== 'undefined') return indexedDB;
+        var ret = null;
+        if (typeof window === 'object') ret = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+        assert(ret, 'IDBFS used, but indexedDB not supported');
+        return ret;
+      },DB_VERSION:21,DB_STORE_NAME:"FILE_DATA",mount:function(mount) {
+        // reuse all of the core MEMFS functionality
+        return MEMFS.mount.apply(null, arguments);
+      },syncfs:function(mount, populate, callback) {
+        IDBFS.getLocalSet(mount, function(err, local) {
+          if (err) return callback(err);
+  
+          IDBFS.getRemoteSet(mount, function(err, remote) {
+            if (err) return callback(err);
+  
+            var src = populate ? remote : local;
+            var dst = populate ? local : remote;
+  
+            IDBFS.reconcile(src, dst, callback);
+          });
+        });
+      },getDB:function(name, callback) {
+        // check the cache first
+        var db = IDBFS.dbs[name];
+        if (db) {
+          return callback(null, db);
+        }
+  
+        var req;
+        try {
+          req = IDBFS.indexedDB().open(name, IDBFS.DB_VERSION);
+        } catch (e) {
+          return callback(e);
+        }
+        if (!req) {
+          return callback("Unable to connect to IndexedDB");
+        }
+        req.onupgradeneeded = function(e) {
+          var db = e.target.result;
+          var transaction = e.target.transaction;
+  
+          var fileStore;
+  
+          if (db.objectStoreNames.contains(IDBFS.DB_STORE_NAME)) {
+            fileStore = transaction.objectStore(IDBFS.DB_STORE_NAME);
+          } else {
+            fileStore = db.createObjectStore(IDBFS.DB_STORE_NAME);
+          }
+  
+          if (!fileStore.indexNames.contains('timestamp')) {
+            fileStore.createIndex('timestamp', 'timestamp', { unique: false });
+          }
+        };
+        req.onsuccess = function() {
+          db = req.result;
+  
+          // add to the cache
+          IDBFS.dbs[name] = db;
+          callback(null, db);
+        };
+        req.onerror = function(e) {
+          callback(this.error);
+          e.preventDefault();
+        };
+      },getLocalSet:function(mount, callback) {
+        var entries = {};
+  
+        function isRealDir(p) {
+          return p !== '.' && p !== '..';
+        };
+        function toAbsolute(root) {
+          return function(p) {
+            return PATH.join2(root, p);
+          }
+        };
+  
+        var check = FS.readdir(mount.mountpoint).filter(isRealDir).map(toAbsolute(mount.mountpoint));
+  
+        while (check.length) {
+          var path = check.pop();
+          var stat;
+  
+          try {
+            stat = FS.stat(path);
+          } catch (e) {
+            return callback(e);
+          }
+  
+          if (FS.isDir(stat.mode)) {
+            check.push.apply(check, FS.readdir(path).filter(isRealDir).map(toAbsolute(path)));
+          }
+  
+          entries[path] = { 'timestamp': stat.mtime };
+        }
+  
+        return callback(null, { type: 'local', entries: entries });
+      },getRemoteSet:function(mount, callback) {
+        var entries = {};
+  
+        IDBFS.getDB(mount.mountpoint, function(err, db) {
+          if (err) return callback(err);
+  
+          try {
+            var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readonly');
+            transaction.onerror = function(e) {
+              callback(this.error);
+              e.preventDefault();
+            };
+  
+            var store = transaction.objectStore(IDBFS.DB_STORE_NAME);
+            var index = store.index('timestamp');
+  
+            index.openKeyCursor().onsuccess = function(event) {
+              var cursor = event.target.result;
+  
+              if (!cursor) {
+                return callback(null, { type: 'remote', db: db, entries: entries });
+              }
+  
+              entries[cursor.primaryKey] = { 'timestamp': cursor.key };
+  
+              cursor.continue();
+            };
+          } catch (e) {
+            return callback(e);
+          }
+        });
+      },loadLocalEntry:function(path, callback) {
+        var stat, node;
+  
+        try {
+          var lookup = FS.lookupPath(path);
+          node = lookup.node;
+          stat = FS.stat(path);
+        } catch (e) {
+          return callback(e);
+        }
+  
+        if (FS.isDir(stat.mode)) {
+          return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode });
+        } else if (FS.isFile(stat.mode)) {
+          // Performance consideration: storing a normal JavaScript array to a IndexedDB is much slower than storing a typed array.
+          // Therefore always convert the file contents to a typed array first before writing the data to IndexedDB.
+          node.contents = MEMFS.getFileDataAsTypedArray(node);
+          return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode, 'contents': node.contents });
+        } else {
+          return callback(new Error('node type not supported'));
+        }
+      },storeLocalEntry:function(path, entry, callback) {
+        try {
+          if (FS.isDir(entry['mode'])) {
+            FS.mkdirTree(path, entry['mode']);
+          } else if (FS.isFile(entry['mode'])) {
+            FS.writeFile(path, entry['contents'], { canOwn: true });
+          } else {
+            return callback(new Error('node type not supported'));
+          }
+  
+          FS.chmod(path, entry['mode']);
+          FS.utime(path, entry['timestamp'], entry['timestamp']);
+        } catch (e) {
+          return callback(e);
+        }
+  
+        callback(null);
+      },removeLocalEntry:function(path, callback) {
+        try {
+          var lookup = FS.lookupPath(path);
+          var stat = FS.stat(path);
+  
+          if (FS.isDir(stat.mode)) {
+            FS.rmdir(path);
+          } else if (FS.isFile(stat.mode)) {
+            FS.unlink(path);
+          }
+        } catch (e) {
+          return callback(e);
+        }
+  
+        callback(null);
+      },loadRemoteEntry:function(store, path, callback) {
+        var req = store.get(path);
+        req.onsuccess = function(event) { callback(null, event.target.result); };
+        req.onerror = function(e) {
+          callback(this.error);
+          e.preventDefault();
+        };
+      },storeRemoteEntry:function(store, path, entry, callback) {
+        var req = store.put(entry, path);
+        req.onsuccess = function() { callback(null); };
+        req.onerror = function(e) {
+          callback(this.error);
+          e.preventDefault();
+        };
+      },removeRemoteEntry:function(store, path, callback) {
+        var req = store.delete(path);
+        req.onsuccess = function() { callback(null); };
+        req.onerror = function(e) {
+          callback(this.error);
+          e.preventDefault();
+        };
+      },reconcile:function(src, dst, callback) {
+        var total = 0;
+  
+        var create = [];
+        Object.keys(src.entries).forEach(function (key) {
+          var e = src.entries[key];
+          var e2 = dst.entries[key];
+          if (!e2 || e['timestamp'].getTime() != e2['timestamp'].getTime()) {
+            create.push(key);
+            total++;
+          }
+        });
+  
+        var remove = [];
+        Object.keys(dst.entries).forEach(function (key) {
+          var e = dst.entries[key];
+          var e2 = src.entries[key];
+          if (!e2) {
+            remove.push(key);
+            total++;
+          }
+        });
+  
+        if (!total) {
+          return callback(null);
+        }
+  
+        var errored = false;
+        var db = src.type === 'remote' ? src.db : dst.db;
+        var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readwrite');
+        var store = transaction.objectStore(IDBFS.DB_STORE_NAME);
+  
+        function done(err) {
+          if (err && !errored) {
+            errored = true;
+            return callback(err);
+          }
+        };
+  
+        transaction.onerror = function(e) {
+          done(this.error);
+          e.preventDefault();
+        };
+  
+        transaction.oncomplete = function(e) {
+          if (!errored) {
+            callback(null);
+          }
+        };
+  
+        // sort paths in ascending order so directory entries are created
+        // before the files inside them
+        create.sort().forEach(function (path) {
+          if (dst.type === 'local') {
+            IDBFS.loadRemoteEntry(store, path, function (err, entry) {
+              if (err) return done(err);
+              IDBFS.storeLocalEntry(path, entry, done);
+            });
+          } else {
+            IDBFS.loadLocalEntry(path, function (err, entry) {
+              if (err) return done(err);
+              IDBFS.storeRemoteEntry(store, path, entry, done);
+            });
+          }
+        });
+  
+        // sort paths in descending order so files are deleted before their
+        // parent directories
+        remove.sort().reverse().forEach(function(path) {
+          if (dst.type === 'local') {
+            IDBFS.removeLocalEntry(path, done);
+          } else {
+            IDBFS.removeRemoteEntry(store, path, done);
+          }
+        });
+      }};
   
   var ERRNO_MESSAGES={0:"Success",1:"Arg list too long",2:"Permission denied",3:"Address already in use",4:"Address not available",5:"Address family not supported by protocol family",6:"No more processes",7:"Socket already connected",8:"Bad file number",9:"Trying to read unreadable message",10:"Mount device busy",11:"Operation canceled",12:"No children",13:"Connection aborted",14:"Connection refused",15:"Connection reset by peer",16:"File locking deadlock error",17:"Destination address required",18:"Math arg out of domain of func",19:"Quota exceeded",20:"File exists",21:"Bad address",22:"File too large",23:"Host is unreachable",24:"Identifier removed",25:"Illegal byte sequence",26:"Connection already in progress",27:"Interrupted system call",28:"Invalid argument",29:"I/O error",30:"Socket is already connected",31:"Is a directory",32:"Too many symbolic links",33:"Too many open files",34:"Too many links",35:"Message too long",36:"Multihop attempted",37:"File or path name too long",38:"Network interface is not configured",39:"Connection reset by network",40:"Network is unreachable",41:"Too many open files in system",42:"No buffer space available",43:"No such device",44:"No such file or directory",45:"Exec format error",46:"No record locks available",47:"The link has been severed",48:"Not enough core",49:"No message of desired type",50:"Protocol not available",51:"No space left on device",52:"Function not implemented",53:"Socket is not connected",54:"Not a directory",55:"Directory not empty",56:"State not recoverable",57:"Socket operation on non-socket",59:"Not a typewriter",60:"No such device or address",61:"Value too large for defined data type",62:"Previous owner died",63:"Not super-user",64:"Broken pipe",65:"Protocol error",66:"Unknown protocol",67:"Protocol wrong type for socket",68:"Math result not representable",69:"Read only file system",70:"Illegal seek",71:"No such process",72:"Stale file handle",73:"Connection timed out",74:"Text file busy",75:"Cross-device link",100:"Device not a stream",101:"Bad font file fmt",102:"Invalid slot",103:"Invalid request code",104:"No anode",105:"Block device required",106:"Channel number out of range",107:"Level 3 halted",108:"Level 3 reset",109:"Link number out of range",110:"Protocol driver not attached",111:"No CSI structure available",112:"Level 2 halted",113:"Invalid exchange",114:"Invalid request descriptor",115:"Exchange full",116:"No data (for no delay io)",117:"Timer expired",118:"Out of streams resources",119:"Machine is not on the network",120:"Package not installed",121:"The object is remote",122:"Advertise error",123:"Srmount error",124:"Communication error on send",125:"Cross mount point (not really error)",126:"Given log. name not unique",127:"f.d. invalid for this operation",128:"Remote address changed",129:"Can   access a needed shared lib",130:"Accessing a corrupted shared lib",131:".lib section in a.out corrupted",132:"Attempting to link in too many libs",133:"Attempting to exec a shared library",135:"Streams pipe error",136:"Too many users",137:"Socket type not supported",138:"Not supported",139:"Protocol family not supported",140:"Can't send after socket shutdown",141:"Too many references",142:"Host is down",148:"No medium (in tape drive)",156:"Level 2 not synchronized"};
   
@@ -3877,6 +4162,7 @@ var ASM_CONSTS = {
   
         FS.filesystems = {
           'MEMFS': MEMFS,
+          'IDBFS': IDBFS,
         };
       },init:function(input, output, error) {
         assert(!FS.init.initialized, 'FS.init was previously called. If you want to initialize later with custom parameters, remove any earlier calls (note that one is automatically added to the generated code)');
@@ -4593,6 +4879,11 @@ var ASM_CONSTS = {
     if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
     return -e.errno;
   }
+  }
+
+  function __emscripten_fetch_free(id) {
+    //Note: should just be [id], but indexes off by 1 (see: #8803)
+    delete Fetch.xhrs[id-1];
   }
 
   function _abort() {
@@ -9132,6 +9423,11 @@ var ASM_CONSTS = {
       return 1;
     }
 
+  function _emscripten_is_main_browser_thread() {
+      return !ENVIRONMENT_IS_WORKER;
+    }
+  Module["_emscripten_is_main_browser_thread"] = _emscripten_is_main_browser_thread;
+
   function _longjmp(env, value) {
       _setThrew(env, value || 1);
       throw 'longjmp';
@@ -9838,6 +10134,390 @@ var ASM_CONSTS = {
         Browser.safeSetTimeout(wakeUp, ms);
       });
     }
+
+  var Fetch={xhrs:[],setu64:function(addr, val) {
+      HEAPU32[addr >> 2] = val;
+      HEAPU32[addr + 4 >> 2] = (val / 4294967296)|0;
+    },openDatabase:function(dbname, dbversion, onsuccess, onerror) {
+      try {
+        var openRequest = indexedDB.open(dbname, dbversion);
+      } catch (e) { return onerror(e); }
+  
+      openRequest.onupgradeneeded = function(event) {
+        var db = event.target.result;
+        if (db.objectStoreNames.contains('FILES')) {
+          db.deleteObjectStore('FILES');
+        }
+        db.createObjectStore('FILES');
+      };
+      openRequest.onsuccess = function(event) { onsuccess(event.target.result); };
+      openRequest.onerror = function(error) { onerror(error); };
+    },staticInit:function() {
+      var isMainThread = true;
+  
+      var onsuccess = function(db) {
+        Fetch.dbInstance = db;
+  
+        if (isMainThread) {
+          removeRunDependency('library_fetch_init');
+        }
+      };
+      var onerror = function() {
+        Fetch.dbInstance = false;
+  
+        if (isMainThread) {
+          removeRunDependency('library_fetch_init');
+        }
+      };
+      Fetch.openDatabase('emscripten_filesystem', 1, onsuccess, onerror);
+  
+      if (typeof ENVIRONMENT_IS_FETCH_WORKER === 'undefined' || !ENVIRONMENT_IS_FETCH_WORKER) addRunDependency('library_fetch_init');
+    }};
+  
+  function fetchXHR(fetch, onsuccess, onerror, onprogress, onreadystatechange) {
+    var url = HEAPU32[fetch + 8 >> 2];
+    if (!url) {
+      onerror(fetch, 0, 'no url specified!');
+      return;
+    }
+    var url_ = UTF8ToString(url);
+  
+    var fetch_attr = fetch + 112;
+    var requestMethod = UTF8ToString(fetch_attr);
+    if (!requestMethod) requestMethod = 'GET';
+    var userData = HEAPU32[fetch + 4 >> 2];
+    var fetchAttributes = HEAPU32[fetch_attr + 52 >> 2];
+    var timeoutMsecs = HEAPU32[fetch_attr + 56 >> 2];
+    var withCredentials = !!HEAPU32[fetch_attr + 60 >> 2];
+    var destinationPath = HEAPU32[fetch_attr + 64 >> 2];
+    var userName = HEAPU32[fetch_attr + 68 >> 2];
+    var password = HEAPU32[fetch_attr + 72 >> 2];
+    var requestHeaders = HEAPU32[fetch_attr + 76 >> 2];
+    var overriddenMimeType = HEAPU32[fetch_attr + 80 >> 2];
+    var dataPtr = HEAPU32[fetch_attr + 84 >> 2];
+    var dataLength = HEAPU32[fetch_attr + 88 >> 2];
+  
+    var fetchAttrLoadToMemory = !!(fetchAttributes & 1);
+    var fetchAttrStreamData = !!(fetchAttributes & 2);
+    var fetchAttrPersistFile = !!(fetchAttributes & 4);
+    var fetchAttrAppend = !!(fetchAttributes & 8);
+    var fetchAttrReplace = !!(fetchAttributes & 16);
+    var fetchAttrSynchronous = !!(fetchAttributes & 64);
+    var fetchAttrWaitable = !!(fetchAttributes & 128);
+  
+    var userNameStr = userName ? UTF8ToString(userName) : undefined;
+    var passwordStr = password ? UTF8ToString(password) : undefined;
+    var overriddenMimeTypeStr = overriddenMimeType ? UTF8ToString(overriddenMimeType) : undefined;
+  
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = withCredentials;
+    xhr.open(requestMethod, url_, !fetchAttrSynchronous, userNameStr, passwordStr);
+    if (!fetchAttrSynchronous) xhr.timeout = timeoutMsecs; // XHR timeout field is only accessible in async XHRs, and must be set after .open() but before .send().
+    xhr.url_ = url_; // Save the url for debugging purposes (and for comparing to the responseURL that server side advertised)
+    assert(!fetchAttrStreamData, 'streaming uses moz-chunked-arraybuffer which is no longer supported; TODO: rewrite using fetch()');
+    xhr.responseType = 'arraybuffer';
+  
+    if (overriddenMimeType) {
+      xhr.overrideMimeType(overriddenMimeTypeStr);
+    }
+    if (requestHeaders) {
+      for(;;) {
+        var key = HEAPU32[requestHeaders >> 2];
+        if (!key) break;
+        var value = HEAPU32[requestHeaders + 4 >> 2];
+        if (!value) break;
+        requestHeaders += 8;
+        var keyStr = UTF8ToString(key);
+        var valueStr = UTF8ToString(value);
+        xhr.setRequestHeader(keyStr, valueStr);
+      }
+    }
+    Fetch.xhrs.push(xhr);
+    var id = Fetch.xhrs.length;
+    HEAPU32[fetch + 0 >> 2] = id;
+    var data = (dataPtr && dataLength) ? HEAPU8.slice(dataPtr, dataPtr + dataLength) : null;
+    // TODO: Support specifying custom headers to the request.
+  
+    // Share the code to save the response, as we need to do so both on success
+    // and on error (despite an error, there may be a response, like a 404 page).
+    // This receives a condition, which determines whether to save the xhr's
+    // response, or just 0.
+    function saveResponse(condition) {
+      var ptr = 0;
+      var ptrLen = 0;
+      if (condition) {
+        ptrLen = xhr.response ? xhr.response.byteLength : 0;
+        // The data pointer malloc()ed here has the same lifetime as the emscripten_fetch_t structure itself has, and is
+        // freed when emscripten_fetch_close() is called.
+        ptr = _malloc(ptrLen);
+        HEAPU8.set(new Uint8Array(xhr.response), ptr);
+      }
+      HEAPU32[fetch + 12 >> 2] = ptr;
+      Fetch.setu64(fetch + 16, ptrLen);
+    }
+  
+    xhr.onload = function(e) {
+      saveResponse(fetchAttrLoadToMemory && !fetchAttrStreamData);
+      var len = xhr.response ? xhr.response.byteLength : 0;
+      Fetch.setu64(fetch + 24, 0);
+      if (len) {
+        // If the final XHR.onload handler receives the bytedata to compute total length, report that,
+        // otherwise don't write anything out here, which will retain the latest byte size reported in
+        // the most recent XHR.onprogress handler.
+        Fetch.setu64(fetch + 32, len);
+      }
+      HEAPU16[fetch + 40 >> 1] = xhr.readyState;
+      HEAPU16[fetch + 42 >> 1] = xhr.status;
+      if (xhr.statusText) stringToUTF8(xhr.statusText, fetch + 44, 64);
+      if (xhr.status >= 200 && xhr.status < 300) {
+        if (onsuccess) onsuccess(fetch, xhr, e);
+      } else {
+        if (onerror) onerror(fetch, xhr, e);
+      }
+    };
+    xhr.onerror = function(e) {
+      saveResponse(fetchAttrLoadToMemory);
+      var status = xhr.status; // XXX TODO: Overwriting xhr.status doesn't work here, so don't override anywhere else either.
+      Fetch.setu64(fetch + 24, 0);
+      Fetch.setu64(fetch + 32, xhr.response ? xhr.response.byteLength : 0);
+      HEAPU16[fetch + 40 >> 1] = xhr.readyState;
+      HEAPU16[fetch + 42 >> 1] = status;
+      if (onerror) onerror(fetch, xhr, e);
+    };
+    xhr.ontimeout = function(e) {
+      if (onerror) onerror(fetch, xhr, e);
+    };
+    xhr.onprogress = function(e) {
+      var ptrLen = (fetchAttrLoadToMemory && fetchAttrStreamData && xhr.response) ? xhr.response.byteLength : 0;
+      var ptr = 0;
+      if (fetchAttrLoadToMemory && fetchAttrStreamData) {
+        assert(onprogress, 'When doing a streaming fetch, you should have an onprogress handler registered to receive the chunks!');
+        // Allocate byte data in Emscripten heap for the streamed memory block (freed immediately after onprogress call)
+        ptr = _malloc(ptrLen);
+        HEAPU8.set(new Uint8Array(xhr.response), ptr);
+      }
+      HEAPU32[fetch + 12 >> 2] = ptr;
+      Fetch.setu64(fetch + 16, ptrLen);
+      Fetch.setu64(fetch + 24, e.loaded - ptrLen);
+      Fetch.setu64(fetch + 32, e.total);
+      HEAPU16[fetch + 40 >> 1] = xhr.readyState;
+      if (xhr.readyState >= 3 && xhr.status === 0 && e.loaded > 0) xhr.status = 200; // If loading files from a source that does not give HTTP status code, assume success if we get data bytes
+      HEAPU16[fetch + 42 >> 1] = xhr.status;
+      if (xhr.statusText) stringToUTF8(xhr.statusText, fetch + 44, 64);
+      if (onprogress) onprogress(fetch, xhr, e);
+      if (ptr) {
+        _free(ptr);
+      }
+    };
+    xhr.onreadystatechange = function(e) {
+      HEAPU16[fetch + 40 >> 1] = xhr.readyState;
+      if (xhr.readyState >= 2) {
+        HEAPU16[fetch + 42 >> 1] = xhr.status;
+      }
+      if (onreadystatechange) onreadystatechange(fetch, xhr, e);
+    };
+    try {
+      xhr.send(data);
+    } catch(e) {
+      if (onerror) onerror(fetch, xhr, e);
+    }
+  }
+  
+  function fetchCacheData(db, fetch, data, onsuccess, onerror) {
+    if (!db) {
+      onerror(fetch, 0, 'IndexedDB not available!');
+      return;
+    }
+  
+    var fetch_attr = fetch + 112;
+    var destinationPath = HEAPU32[fetch_attr + 64 >> 2];
+    if (!destinationPath) destinationPath = HEAPU32[fetch + 8 >> 2];
+    var destinationPathStr = UTF8ToString(destinationPath);
+  
+    try {
+      var transaction = db.transaction(['FILES'], 'readwrite');
+      var packages = transaction.objectStore('FILES');
+      var putRequest = packages.put(data, destinationPathStr);
+      putRequest.onsuccess = function(event) {
+        HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+        HEAPU16[fetch + 42 >> 1] = 200; // Mimic XHR HTTP status code 200 "OK"
+        stringToUTF8("OK", fetch + 44, 64);
+        onsuccess(fetch, 0, destinationPathStr);
+      };
+      putRequest.onerror = function(error) {
+        // Most likely we got an error if IndexedDB is unwilling to store any more data for this page.
+        // TODO: Can we identify and break down different IndexedDB-provided errors and convert those
+        // to more HTTP status codes for more information?
+        HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+        HEAPU16[fetch + 42 >> 1] = 413; // Mimic XHR HTTP status code 413 "Payload Too Large"
+        stringToUTF8("Payload Too Large", fetch + 44, 64);
+        onerror(fetch, 0, error);
+      };
+    } catch(e) {
+      onerror(fetch, 0, e);
+    }
+  }
+  
+  function fetchLoadCachedData(db, fetch, onsuccess, onerror) {
+    if (!db) {
+      onerror(fetch, 0, 'IndexedDB not available!');
+      return;
+    }
+  
+    var fetch_attr = fetch + 112;
+    var path = HEAPU32[fetch_attr + 64 >> 2];
+    if (!path) path = HEAPU32[fetch + 8 >> 2];
+    var pathStr = UTF8ToString(path);
+  
+    try {
+      var transaction = db.transaction(['FILES'], 'readonly');
+      var packages = transaction.objectStore('FILES');
+      var getRequest = packages.get(pathStr);
+      getRequest.onsuccess = function(event) {
+        if (event.target.result) {
+          var value = event.target.result;
+          var len = value.byteLength || value.length;
+          // The data pointer malloc()ed here has the same lifetime as the emscripten_fetch_t structure itself has, and is
+          // freed when emscripten_fetch_close() is called.
+          var ptr = _malloc(len);
+          HEAPU8.set(new Uint8Array(value), ptr);
+          HEAPU32[fetch + 12 >> 2] = ptr;
+          Fetch.setu64(fetch + 16, len);
+          Fetch.setu64(fetch + 24, 0);
+          Fetch.setu64(fetch + 32, len);
+          HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+          HEAPU16[fetch + 42 >> 1] = 200; // Mimic XHR HTTP status code 200 "OK"
+          stringToUTF8("OK", fetch + 44, 64);
+          onsuccess(fetch, 0, value);
+        } else {
+          // Succeeded to load, but the load came back with the value of undefined, treat that as an error since we never store undefined in db.
+          HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+          HEAPU16[fetch + 42 >> 1] = 404; // Mimic XHR HTTP status code 404 "Not Found"
+          stringToUTF8("Not Found", fetch + 44, 64);
+          onerror(fetch, 0, 'no data');
+        }
+      };
+      getRequest.onerror = function(error) {
+        HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+        HEAPU16[fetch + 42 >> 1] = 404; // Mimic XHR HTTP status code 404 "Not Found"
+        stringToUTF8("Not Found", fetch + 44, 64);
+        onerror(fetch, 0, error);
+      };
+    } catch(e) {
+      onerror(fetch, 0, e);
+    }
+  }
+  
+  function fetchDeleteCachedData(db, fetch, onsuccess, onerror) {
+    if (!db) {
+      onerror(fetch, 0, 'IndexedDB not available!');
+      return;
+    }
+  
+    var fetch_attr = fetch + 112;
+    var path = HEAPU32[fetch_attr + 64 >> 2];
+    if (!path) path = HEAPU32[fetch + 8 >> 2];
+    var pathStr = UTF8ToString(path);
+  
+    try {
+      var transaction = db.transaction(['FILES'], 'readwrite');
+      var packages = transaction.objectStore('FILES');
+      var request = packages.delete(pathStr);
+      request.onsuccess = function(event) {
+        var value = event.target.result;
+        HEAPU32[fetch + 12 >> 2] = 0;
+        Fetch.setu64(fetch + 16, 0);
+        Fetch.setu64(fetch + 24, 0);
+        Fetch.setu64(fetch + 32, 0);
+        HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+        HEAPU16[fetch + 42 >> 1] = 200; // Mimic XHR HTTP status code 200 "OK"
+        stringToUTF8("OK", fetch + 44, 64);
+        onsuccess(fetch, 0, value);
+      };
+      request.onerror = function(error) {
+        HEAPU16[fetch + 40 >> 1] = 4; // Mimic XHR readyState 4 === 'DONE: The operation is complete'
+        HEAPU16[fetch + 42 >> 1] = 404; // Mimic XHR HTTP status code 404 "Not Found"
+        stringToUTF8("Not Found", fetch + 44, 64);
+        onerror(fetch, 0, error);
+      };
+    } catch(e) {
+      onerror(fetch, 0, e);
+    }
+  }
+  function _emscripten_start_fetch(fetch, successcb, errorcb, progresscb, readystatechangecb) {
+    // Avoid shutting down the runtime since we want to wait for the async
+    // response.
+    noExitRuntime = true;
+  
+    var fetch_attr = fetch + 112;
+    var requestMethod = UTF8ToString(fetch_attr);
+    var onsuccess = HEAPU32[fetch_attr + 36 >> 2];
+    var onerror = HEAPU32[fetch_attr + 40 >> 2];
+    var onprogress = HEAPU32[fetch_attr + 44 >> 2];
+    var onreadystatechange = HEAPU32[fetch_attr + 48 >> 2];
+    var fetchAttributes = HEAPU32[fetch_attr + 52 >> 2];
+    var fetchAttrLoadToMemory = !!(fetchAttributes & 1);
+    var fetchAttrStreamData = !!(fetchAttributes & 2);
+    var fetchAttrPersistFile = !!(fetchAttributes & 4);
+    var fetchAttrNoDownload = !!(fetchAttributes & 32);
+    var fetchAttrAppend = !!(fetchAttributes & 8);
+    var fetchAttrReplace = !!(fetchAttributes & 16);
+  
+    var reportSuccess = function(fetch, xhr, e) {
+      if (onsuccess) (function(a1) {  dynCall_vi.apply(null, [onsuccess, a1]); })(fetch);
+      else if (successcb) successcb(fetch);
+    };
+  
+    var reportProgress = function(fetch, xhr, e) {
+      if (onprogress) (function(a1) {  dynCall_vi.apply(null, [onprogress, a1]); })(fetch);
+      else if (progresscb) progresscb(fetch);
+    };
+  
+    var reportError = function(fetch, xhr, e) {
+      if (onerror) (function(a1) {  dynCall_vi.apply(null, [onerror, a1]); })(fetch);
+      else if (errorcb) errorcb(fetch);
+    };
+  
+    var reportReadyStateChange = function(fetch, xhr, e) {
+      if (onreadystatechange) (function(a1) {  dynCall_vi.apply(null, [onreadystatechange, a1]); })(fetch);
+      else if (readystatechangecb) readystatechangecb(fetch);
+    };
+  
+    var performUncachedXhr = function(fetch, xhr, e) {
+      fetchXHR(fetch, reportSuccess, reportError, reportProgress, reportReadyStateChange);
+    };
+  
+    var cacheResultAndReportSuccess = function(fetch, xhr, e) {
+      var storeSuccess = function(fetch, xhr, e) {
+        if (onsuccess) (function(a1) {  dynCall_vi.apply(null, [onsuccess, a1]); })(fetch);
+        else if (successcb) successcb(fetch);
+      };
+      var storeError = function(fetch, xhr, e) {
+        if (onsuccess) (function(a1) {  dynCall_vi.apply(null, [onsuccess, a1]); })(fetch);
+        else if (successcb) successcb(fetch);
+      };
+      fetchCacheData(Fetch.dbInstance, fetch, xhr.response, storeSuccess, storeError);
+    };
+  
+    var performCachedXhr = function(fetch, xhr, e) {
+      fetchXHR(fetch, cacheResultAndReportSuccess, reportError, reportProgress, reportReadyStateChange);
+    };
+  
+    if (requestMethod === 'EM_IDB_STORE') {
+      // TODO(?): Here we perform a clone of the data, because storing shared typed arrays to IndexedDB does not seem to be allowed.
+      var ptr = HEAPU32[fetch_attr + 84 >> 2];
+      fetchCacheData(Fetch.dbInstance, fetch, HEAPU8.slice(ptr, ptr + HEAPU32[fetch_attr + 88 >> 2]), reportSuccess, reportError);
+    } else if (requestMethod === 'EM_IDB_DELETE') {
+      fetchDeleteCachedData(Fetch.dbInstance, fetch, reportSuccess, reportError);
+    } else if (!fetchAttrReplace) {
+      fetchLoadCachedData(Fetch.dbInstance, fetch, reportSuccess, fetchAttrNoDownload ? reportError : (fetchAttrPersistFile ? performCachedXhr : performUncachedXhr));
+    } else if (!fetchAttrNoDownload) {
+      fetchXHR(fetch, fetchAttrPersistFile ? cacheResultAndReportSuccess : reportSuccess, reportError, reportProgress, reportReadyStateChange);
+    } else {
+      return 0; // todo: free
+    }
+    return fetch;
+  }
 
   function _emscripten_thread_sleep(msecs) {
       var start = _emscripten_get_now();
@@ -11210,6 +11890,7 @@ var __miniTempWebGLIntBuffersStorage = new Int32Array(288);
   __miniTempWebGLIntBuffers[i] = __miniTempWebGLIntBuffersStorage.subarray(0, i+1);
   }
   ;
+Fetch.staticInit();;
 var ASSERTIONS = true;
 
 
@@ -11245,6 +11926,7 @@ var asmLibraryArg = {
   "__sys_fcntl64": ___sys_fcntl64,
   "__sys_ioctl": ___sys_ioctl,
   "__sys_open": ___sys_open,
+  "_emscripten_fetch_free": __emscripten_fetch_free,
   "abort": _abort,
   "clock_gettime": _clock_gettime,
   "dlclose": _dlclose,
@@ -11551,6 +12233,7 @@ var asmLibraryArg = {
   "emscripten_glViewport": _emscripten_glViewport,
   "emscripten_glWaitSync": _emscripten_glWaitSync,
   "emscripten_has_asyncify": _emscripten_has_asyncify,
+  "emscripten_is_main_browser_thread": _emscripten_is_main_browser_thread,
   "emscripten_longjmp": _emscripten_longjmp,
   "emscripten_memcpy_big": _emscripten_memcpy_big,
   "emscripten_request_fullscreen_strategy": _emscripten_request_fullscreen_strategy,
@@ -11583,6 +12266,7 @@ var asmLibraryArg = {
   "emscripten_set_visibilitychange_callback_on_thread": _emscripten_set_visibilitychange_callback_on_thread,
   "emscripten_set_wheel_callback_on_thread": _emscripten_set_wheel_callback_on_thread,
   "emscripten_sleep": _emscripten_sleep,
+  "emscripten_start_fetch": _emscripten_start_fetch,
   "emscripten_thread_sleep": _emscripten_thread_sleep,
   "environ_get": _environ_get,
   "environ_sizes_get": _environ_sizes_get,
@@ -11689,13 +12373,16 @@ var _memcpy = Module["_memcpy"] = createExportWrapper("memcpy");
 var _memset = Module["_memset"] = createExportWrapper("memset");
 
 /** @type {function(...*):?} */
+var _e_io_idbfs_synced = Module["_e_io_idbfs_synced"] = createExportWrapper("e_io_idbfs_synced");
+
+/** @type {function(...*):?} */
 var _main = Module["_main"] = createExportWrapper("main");
 
 /** @type {function(...*):?} */
-var _fflush = Module["_fflush"] = createExportWrapper("fflush");
+var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
 
 /** @type {function(...*):?} */
-var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
+var _fflush = Module["_fflush"] = createExportWrapper("fflush");
 
 /** @type {function(...*):?} */
 var _fileno = Module["_fileno"] = createExportWrapper("fileno");
@@ -11768,10 +12455,13 @@ var dynCall_viii = Module["dynCall_viii"] = createExportWrapper("dynCall_viii");
 var dynCall_vi = Module["dynCall_vi"] = createExportWrapper("dynCall_vi");
 
 /** @type {function(...*):?} */
+var dynCall_vf = Module["dynCall_vf"] = createExportWrapper("dynCall_vf");
+
+/** @type {function(...*):?} */
 var dynCall_v = Module["dynCall_v"] = createExportWrapper("dynCall_v");
 
 /** @type {function(...*):?} */
-var dynCall_vf = Module["dynCall_vf"] = createExportWrapper("dynCall_vf");
+var dynCall_viif = Module["dynCall_viif"] = createExportWrapper("dynCall_viif");
 
 /** @type {function(...*):?} */
 var dynCall_ii = Module["dynCall_ii"] = createExportWrapper("dynCall_ii");
@@ -11835,9 +12525,6 @@ var dynCall_vff = Module["dynCall_vff"] = createExportWrapper("dynCall_vff");
 
 /** @type {function(...*):?} */
 var dynCall_vfi = Module["dynCall_vfi"] = createExportWrapper("dynCall_vfi");
-
-/** @type {function(...*):?} */
-var dynCall_viif = Module["dynCall_viif"] = createExportWrapper("dynCall_viif");
 
 /** @type {function(...*):?} */
 var dynCall_vif = Module["dynCall_vif"] = createExportWrapper("dynCall_vif");
@@ -12235,6 +12922,12 @@ if (!Object.getOwnPropertyDescriptor(Module, "IDBStore")) Module["IDBStore"] = f
 if (!Object.getOwnPropertyDescriptor(Module, "runAndAbortIfError")) Module["runAndAbortIfError"] = function() { abort("'runAndAbortIfError' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "Asyncify")) Module["Asyncify"] = function() { abort("'Asyncify' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "Fibers")) Module["Fibers"] = function() { abort("'Fibers' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "Fetch")) Module["Fetch"] = function() { abort("'Fetch' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "fetchDeleteCachedData")) Module["fetchDeleteCachedData"] = function() { abort("'fetchDeleteCachedData' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "fetchLoadCachedData")) Module["fetchLoadCachedData"] = function() { abort("'fetchLoadCachedData' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "fetchCacheData")) Module["fetchCacheData"] = function() { abort("'fetchCacheData' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "fetchXHR")) Module["fetchXHR"] = function() { abort("'fetchXHR' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "IDBFS")) Module["IDBFS"] = function() { abort("'IDBFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "emscriptenWebGLGetIndexed")) Module["emscriptenWebGLGetIndexed"] = function() { abort("'emscriptenWebGLGetIndexed' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "warnOnce")) Module["warnOnce"] = function() { abort("'warnOnce' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "stackSave")) Module["stackSave"] = function() { abort("'stackSave' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
