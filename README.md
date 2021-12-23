@@ -1,9 +1,6 @@
-# Emscripten compiled JumpHare live demo
+# My own webpage for games and stuff
 
-[LiveDemo](https://renehorstmann.github.io)
-
-See [JumpHare](https://github.com/renehorstmann/JumpHare)
+[Click here to show the page](https://renehorstmann.github.io)
 
 ## Author
 René Horstmann
-
