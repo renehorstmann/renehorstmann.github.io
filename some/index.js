@@ -198,7 +198,7 @@ Module['FS_createPath']("/res", "r", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/res/r/single.glsl", "start": 0, "end": 1508}, {"filename": "/res/r/someLICENSE", "start": 1508, "end": 2580}, {"filename": "/res/r/singlerefract.glsl", "start": 2580, "end": 6157}, {"filename": "/res/r/particlerefract.glsl", "start": 6157, "end": 11361}, {"filename": "/res/r/batchrefract.glsl", "start": 11361, "end": 15109}, {"filename": "/res/r/font85.png", "start": 15109, "end": 16161}, {"filename": "/res/r/font55.png", "start": 16161, "end": 16694}, {"filename": "/res/r/particle.glsl", "start": 16694, "end": 19828}, {"filename": "/res/r/batch.glsl", "start": 19828, "end": 21507}], "remote_package_size": 21507, "package_uuid": "fd01c3d2-2f03-4fc0-a41f-4eeefd26be59"});
+    loadPackage({"files": [{"filename": "/res/r/single.glsl", "start": 0, "end": 1508}, {"filename": "/res/r/someLICENSE", "start": 1508, "end": 2580}, {"filename": "/res/r/singlerefract.glsl", "start": 2580, "end": 6157}, {"filename": "/res/r/particlerefract.glsl", "start": 6157, "end": 11361}, {"filename": "/res/r/batchrefract.glsl", "start": 11361, "end": 15109}, {"filename": "/res/r/font85.png", "start": 15109, "end": 16161}, {"filename": "/res/r/font55.png", "start": 16161, "end": 16694}, {"filename": "/res/r/particle.glsl", "start": 16694, "end": 19828}, {"filename": "/res/r/batch.glsl", "start": 19828, "end": 21507}], "remote_package_size": 21507, "package_uuid": "4acf747c-f6eb-492a-aa0e-33c8105992f9"});
 
   })();
 
