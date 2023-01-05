@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezepte von Horsimann</title>
+
+    <!--Import Google Icon Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" media="screen,projection"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icon180.png">
+    <link rel="shortcut icon" href="icon196.png" sizes="196x196">
+</head>
+<body>
+
+<style>
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card-title {
+        text-shadow: 1px 1px 2px black;
+        font-weight: bold;
+        font-size: xx-large !important;
+    }
+</style>
+
+<nav class="green" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo">Horsimann</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Meine Rezepte:</h1>
+</div>
+
+<div class="container" id="page_container"></div>
+
+<footer class="page-footer green darken-3">
+    <div class="footer-copyright">
+        <div class="container">
+            Mini Impressum: Spieleprogrammierung Horsimann; Christina Horstmann; Dölls Diek 5; 46399 Bocholt; Email: info at horsimann . de;
+            <a href="privacy_policy.html">Datenschutzerklärung</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+<!-- materialize.js; JavaScript at end of body for optimized loading-->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+</script>
+
+<!-- load content by user -->
+<script>
+
+    let page = "";
+    let page_rows = 0;
+    let page_was_set = false;
+
+    function page_clear() {
+        page = "";
+        page_rows = 0;
+    }
+    function page_set() {
+        // only sets if valid
+        if(page_was_set)
+            return;
+        if(page_rows <= 0)
+            return;
+        
+        page_was_set = true;
+        
+        let page_container = document.getElementById("page_container");
+        page_container.innerHTML = page;
+    }
+    function page_add_row(name) {
+        console.log("row: <" + name + ">");
+        if(page_rows>0) {
+            page += "  </div>";
+            page += " </div>";
+            page += "</div>";
+        }
+        page_rows++;
+
+        let color = ["purple lighten-5",
+            "red lighten-5",
+            "cyan lighten-5",
+            "yellow lighten-5",
+            "blue lighten-5",
+            "green lighten-5",][page_rows%6];
+
+        // page += "<h2>"+name+"</h2>";
+        page += "<div class=\"card " + color + "\">";
+        page += " <div class=\"card-content black-text\">"
+        page += "  <span class=\"card-title\">"+name+"</span>";
+        page += "  <div class=\"row\">";
+    }
+
+    function page_add_item(name, link, img) {
+        console.log("item: <" + name + ";" + img + ">");
+        page += "<div class=\"col s12 m6 l4\">";
+        page += " <div class=\"card green lighten-5\">";
+        page += "  <div class=\"card-image\">";
+        page += "   <a href=\"" + link + "\">"
+        page += "    <img src=\"" + img + "\">"
+        page += "    <span class=\"card-title\">" + name + "</span>"
+        page += "   </a>"
+        page += "  </div>"
+        page += " </div>"
+        page += "</div>"
+    }
+    
+
+
+    let content_request = new XMLHttpRequest();
+    content_request.open('GET', 'https://raw.githubusercontent.com/renehorstmann/Rezepte/master/README.md');
+    content_request.onreadystatechange = function() {
+        content = content_request.responseText;
+
+        // check valid
+        if(!content.startsWith("# Rezepte")) {
+            return;
+        }
+        
+        page_clear();
+
+        // split lines
+        lines = content.split("\r\n");
+
+        for(let i=0; i<lines.length; i++) {
+            line = lines[i];
+
+            // new row
+            if(line.startsWith("## ")) {
+                line = line.substring(3);
+                page_add_row(line);
+            }
+
+            // new item
+            else if(line.startsWith("- [")) {
+                line = line.substring(3);
+                name_end = line.indexOf("](");
+                if(name_end < 1) {
+                    continue;
+                }
+                name = line.substring(0, name_end);
+                line = line.substring(name_end+2);
+                md_end = line.indexOf(".md)")
+                if(md_end < 1) {
+                    continue;
+                }
+                file = line.substring(0, md_end);
+                link = "https://github.com/renehorstmann/Rezepte/blob/master/" + file + ".md"
+                img = "https://raw.githubusercontent.com/renehorstmann/Rezepte/master/imgs/" + file + ".jpg"
+
+                page_add_item(name, link, img);
+            }
+
+        }
+
+        page_set();
+
+    }
+    content_request.send();
+</script>
+
+</html>
