@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Horsimann</title>
 
-
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" media="screen,projection"
           href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
@@ -22,6 +22,9 @@
 <body>
 
 <style>
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
     .flex {
         display: flex;
         flex-wrap: wrap;
@@ -39,12 +42,12 @@
 </nav>
 
 <div class="container">
-    <div class="row flex">
+    <div class="row">
 
         <div class="col s12 m6 l4">
             <div class="card green lighten-5">
                 <div class="card-image">
-                    <a href="https://github.com/renehorstmann/Rezepte/blob/master/README.md">
+                    <a href="rezepte">
                         <img src="imgs/rezepte.jpg">
                         <span class="card-title">Meine Rezepte</span>
                     </a>
@@ -52,6 +55,10 @@
                 <div class="card-content">
                     <p>Ein paar Rezepte die ich mir in GitHub notiere. Einige sind Klassiker und andere meine eigenen
                         Rezepte.</p>
+                    <p>
+                        Liste auf:
+                        <a href="https://github.com/renehorstmann/Rezepte/blob/master/README.md">Github</a>
+                    </p>
                 </div>
             </div>
         </div>
