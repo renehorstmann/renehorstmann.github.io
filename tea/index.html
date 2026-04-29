@@ -8,10 +8,35 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <title>Mia</title>
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="icon180.png">
     <link rel="shortcut icon" href="icon196.png" sizes="196x196">
+
+    <!-- Emscripten LICENSE
+
+        Copyright (c) 2010-2014 Emscripten authors, see AUTHORS file.
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.
+    -->
 
 </head>
 
@@ -124,15 +149,27 @@
         </label>
         <label id="modal_upload_png_button" class="modal_button">
             <input id="file_uploader_png" type="file" accept="image/png"/>
-            Upload .png file
+            Upload image .png file
         </label>
-        <label id="modal_upload_txt_button" class="modal_button">
-            <input id="file_uploader_txt" type="file" accept="text/plain"/>
-            Upload .txt file
+        <label id="modal_upload_jpg_button" class="modal_button">
+            <input id="file_uploader_jpg" type="file" accept="image/jpeg"/>
+            Upload image .jpg file
+        </label>
+        <label id="modal_upload_image_button" class="modal_button">
+            <input id="file_uploader_image" type="file" accept="image/png, image/jpeg"/>
+            Upload image file
+        </label>
+        <label id="modal_upload_gif_button" class="modal_button">
+            <input id="file_uploader_gif" type="file" accept="image/gif"/>
+            Upload .gif file
         </label>
         <label id="modal_upload_json_button" class="modal_button">
-            <input id="file_uploader_json" type="file" accept="application/json"/>
+            <input id="file_uploader_json" type="file" accept=".json"/>
             Upload .json file
+        </label>
+        <label id="modal_upload_tar_button" class="modal_button">
+            <input id="file_uploader_tar" type="file" accept=".tar"/>
+            Upload .tar file
         </label>
 
         <p class="modal_font_small">(Please don't zoom in)</p>
@@ -147,30 +184,40 @@
     // called from the engine on o_exit
     function o__exit(why) {
         console.log("o_exit: " + why);
-        var newContent = `<!DOCTYPE html><html><body style="background-color:black;">
-                            <h1 style="color:white;">Potato Browsers are not supported!</h1>
-                            <p style="color:silver;">Full WebGL2.0 is needed!</p>
-                            <p style="color:#757575;">` + why + `</p>
-                            </body></html>`;
-        document.open();
-        document.write(newContent);
-        document.close();
+
+        // Find the game's container element (assuming it's identified by an `id`)
+        var canvasContainer = document.getElementById("canvas");
+
+        // Update only the game's container
+        if (canvasContainer) {
+            canvasContainer.style.backgroundColor = "black";
+            canvasContainer.innerHTML = `
+            <div style="text-align:center; color:white;">
+                <h1>Mia engine stopped!</h1>
+                <p style="color: #757575;">${why}</p>
+            </div>`;
+        } else {
+            // Fallback if the canvas isn't found
+            console.error("Canvas container not found!");
+        }
     }
 
     // called from the engine to offer a download file
-    function o__file_download(filename) {
+    function o__file_download(file_src, filename) {
         try {
             var mime = "application/octet-stream";
 
             filename_lower = filename.toLowerCase();
             if (filename_lower.endsWith(".png"))
                 mime = "image/png";
-            else if (filename_lower.endsWith(".txt"))
-                mime = "text/plain";
+            else if(filename_lower.endsWith(".jpg") || filename_lower.endsWith(".jpeg"))
+                mime = "image/jpeg";
+            else if(filename_lower.endsWith(".gif"))
+                mime = "image/gif";
             else if (filename_lower.endsWith(".json"))
                 mime = "application/json";
 
-            let content = Module.FS.readFile(filename);
+            let content = Module.FS.readFile(file_src);
             console.log(`Offering download of "${filename}", with ${content.length} bytes...`);
 
             var a = document.createElement('a');
@@ -214,9 +261,10 @@
                 modal_file.style.display = "none";
 
                 // call done
+                console.log('calling c done for: ' + file_upload_filename);
                 ccall('o_file_upload__done', 'v', ['string', 'string', 'boolean'],
-                    [file_upload_filename, files[0].name, true],
-                    {async: true});
+                    [file_upload_filename, files[0].name, true]);
+                console.log('c done called');
             };
             fr.readAsArrayBuffer(files[0]);
         } catch (e) {
@@ -224,20 +272,25 @@
 
             // call failed
             ccall('o_file_upload__done', 'v', ['string', 'string', 'boolean'],
-                [file_upload_filename, null, false],
-                {async: true});
+                [file_upload_filename, null, false]);
         }
     }
 
     file_uploader = document.getElementById('file_uploader');
     file_uploader_png = document.getElementById('file_uploader_png');
-    file_uploader_txt = document.getElementById('file_uploader_txt');
+    file_uploader_jpg = document.getElementById('file_uploader_jpg');
+    file_uploader_image = document.getElementById('file_uploader_image');
+    file_uploader_gif = document.getElementById('file_uploader_gif');
     file_uploader_json = document.getElementById('file_uploader_json');
+    file_uploader_tar = document.getElementById('file_uploader_tar');
 
     file_uploader.addEventListener('change', handle_file_upload, false);
     file_uploader_png.addEventListener('change', handle_file_upload, false);
-    file_uploader_txt.addEventListener('change', handle_file_upload, false);
+    file_uploader_jpg.addEventListener('change', handle_file_upload, false);
+    file_uploader_image.addEventListener('change', handle_file_upload, false);
+    file_uploader_gif.addEventListener('change', handle_file_upload, false);
     file_uploader_json.addEventListener('change', handle_file_upload, false);
+    file_uploader_tar.addEventListener('change', handle_file_upload, false);
 
     // called from the engine to ask for a file upload
     function o__file_upload(filename) {
@@ -254,21 +307,33 @@
 
         uploader_btn = document.getElementById('modal_upload_button');
         uploader_png_btn = document.getElementById('modal_upload_png_button');
-        uploader_txt_btn = document.getElementById('modal_upload_txt_button');
+        uploader_jpg_btn = document.getElementById('modal_upload_jpg_button');
+        uploader_image_btn = document.getElementById('modal_upload_image_button');
+        uploader_gif_btn = document.getElementById('modal_upload_gif_button');
         uploader_json_btn = document.getElementById('modal_upload_json_button');
+        uploader_tar_btn = document.getElementById('modal_upload_tar_button');
 
         uploader_btn.style.display = "none";
         uploader_png_btn.style.display = "none";
-        uploader_txt_btn.style.display = "none";
+        uploader_jpg_btn.style.display = "none";
+        uploader_image_btn.style.display = "none";
+        uploader_gif_btn.style.display = "none";
         uploader_json_btn.style.display = "none";
+        uploader_tar_btn.style.display = "none";
 
         filename_lower = filename.toLowerCase();
         if (filename_lower.endsWith(".png"))
             uploader_png_btn.style.display = "block";
-        else if (filename_lower.endsWith(".txt"))
-            uploader_txt_btn.style.display = "block";
+        else if (filename_lower.endsWith(".jpg") || (filename_lower.endsWith(".jpeg")))
+            uploader_jpg_btn.style.display = "block";
+        else if (filename_lower.endsWith(".image"))
+            uploader_image_btn.style.display = "block";
+        else if (filename_lower.endsWith(".gif"))
+            uploader_gif_btn.style.display = "block";
         else if (filename_lower.endsWith(".json"))
             uploader_json_btn.style.display = "block";
+        else if (filename_lower.endsWith(".tar"))
+            uploader_tar_btn.style.display = "block";
         else
             uploader_btn.style.display = "block";
 
@@ -313,8 +378,19 @@
     };
 
 
+    // called from the engine to create a vibration / rumble
+    function a__rumble(duration_ms) {
+        if (navigator.vibrate) {
+            try {
+                navigator.vibrate(duration_ms);
+            } catch (e) {
+                // fail silently
+            }
+        }
+    }
+
 </script>
-<script async type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
 

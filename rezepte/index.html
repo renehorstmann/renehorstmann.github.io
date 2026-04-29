@@ -4,177 +4,252 @@
     <meta charset="UTF-8">
     <title>Rezepte von Horsimann</title>
 
-    <!--Import Google Icon Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Google Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" media="screen,projection"
-          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <!-- Vue3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="icon180.png">
     <link rel="shortcut icon" href="icon196.png" sizes="196x196">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .site-header {
+            background: linear-gradient(135deg, #2f7d32, #66a85f);
+            color: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+        .site-header .container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .site-brand {
+            color: white;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .site-brand:hover {
+            color: #d1e7dd;
+        }
+        
+        .app-bg {
+           background: #A9DDA9;
+        }
+        
+        .section {
+            background: #FFFFFFAA;
+        }
+
+        .recipe-card {
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .recipe-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+        .recipe-card img {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .site-footer {
+            background: linear-gradient(135deg, #2f7d32, #66a85f);
+            color: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+        .site-footer .container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .site-footer .container a {
+            color: white;
+        }
+        .site-footer .container a:hover {
+            color: #d1e7dd;
+        }
+    </style>
 </head>
-<body>
 
-<style>
-    * {
-        font-family: 'Roboto', sans-serif;
-    }
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .card-title {
-        text-shadow: 1px 1px 2px black;
-        font-weight: bold;
-        font-size: xx-large !important;
-    }
-</style>
+<body class="bg-light">
 
-<nav class="green" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo">Horsimann</a>
+<nav class="site-header">
+    <div class="container">
+        <a class="site-brand" href="../index.html">Horsimann Apps and Games</a>
     </div>
 </nav>
 
-<div class="container">
-    <h1>Meine Rezepte:</h1>
-</div>
+<main id="app" class="container app-bg py-4">
+    <h1 class="mb-4">Meine Rezepte:</h1>
 
-<div class="container" id="page_container"></div>
-
-<footer class="page-footer green darken-3">
-    <div class="footer-copyright">
-        <div class="container">
-            Mini Impressum: Spieleprogrammierung Horsimann; Christina Horstmann; Dölls Diek 5; 46399 Bocholt; Email: info at horsimann . de;
-            <a href="privacy_policy.html">Datenschutzerklärung</a>
-        </div>
+    <div v-if="loading" class="alert alert-info" role="alert">
+        Rezepte werden geladen...
     </div>
-</footer>
+
+    <div v-else-if="error" class="alert alert-danger" role="alert">
+        Die Rezepte konnten leider nicht geladen werden.
+        <br>
+        <small>{{ error }}</small>
+    </div>
+
+    <template v-else>
+        <section
+            v-for="(section, sectionIndex) in sections"
+            :key="section.title"
+            class="card section shadow-sm mb-4"
+            :style="{ borderColor: sectionColors[sectionIndex % sectionColors.length] }"
+        >
+            <div class="card-body">
+                <h2 class="card-title h3 mb-3">{{ section.title }}</h2>
+
+                <div class="row g-4">
+                    <div
+                        v-for="recipe in section.recipes"
+                        :key="recipe.file"
+                        class="col-12 col-md-6 col-lg-4"
+                    >
+                        <a :href="recipe.link" class="text-decoration-none text-reset">
+                            <div class="card recipe-card h-100 shadow-sm overflow-hidden">
+                                <div class="position-relative">
+                                    <img
+                                        :src="recipe.img"
+                                        class="card-img-top"
+                                        :alt="recipe.name"
+                                        loading="lazy"
+                                    >
+                                    <div class="position-absolute bottom-0 start-0 end-0 bg-dark bg-opacity-50 text-white p-2">
+                                        <h3 class="h5 m-0">{{ recipe.name }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</main>
+
+
+<nav class="site-footer">
+    <div class="container small">
+        Mini Impressum: Spieleprogrammierung Horsimann; Christina Horstmann; Dölls Diek 5; 46399 Bocholt;
+        Email: info at horsimann . de;
+        <a href="privacy_policy.html">Datenschutzerklärung</a>
+    </div>
+</nav>
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const loading = ref(true);
+            const error = ref("");
+            const sections = ref([]);
+
+            const sectionColors = [
+                "#b39ddb",
+                "#ef9a9a",
+                "#80deea",
+                "#fff176",
+                "#90caf9",
+                "#a5d6a7"
+            ];
+
+            function parseRecipes(content) {
+                if (!content.startsWith("# Rezepte")) {
+                    throw new Error("README hat ein unerwartetes Format.");
+                }
+
+                const parsedSections = [];
+                let currentSection = null;
+                const lines = content.split(/\r?\n/);
+
+                for (const originalLine of lines) {
+                    let line = originalLine;
+
+                    if (line.startsWith("## ")) {
+                        currentSection = {
+                            title: line.substring(3),
+                            recipes: []
+                        };
+                        parsedSections.push(currentSection);
+                    } else if (line.startsWith("- [") && currentSection) {
+                        line = line.substring(3);
+
+                        const nameEnd = line.indexOf("](");
+                        if (nameEnd < 1) {
+                            continue;
+                        }
+
+                        const name = line.substring(0, nameEnd);
+                        line = line.substring(nameEnd + 2);
+
+                        const mdEnd = line.indexOf(".md)");
+                        if (mdEnd < 1) {
+                            continue;
+                        }
+
+                        const file = line.substring(0, mdEnd);
+
+                        currentSection.recipes.push({
+                            name,
+                            file,
+                            link: "https://github.com/renehorstmann/Rezepte/blob/master/" + file + ".md",
+                            img: "https://raw.githubusercontent.com/renehorstmann/Rezepte/master/imgs/" + file + ".jpg"
+                        });
+                    }
+                }
+
+                return parsedSections;
+            }
+
+            onMounted(async () => {
+                try {
+                    const response = await fetch("https://raw.githubusercontent.com/renehorstmann/Rezepte/master/README.md");
+
+                    if (!response.ok) {
+                        throw new Error("README konnte nicht geladen werden.");
+                    }
+
+                    const content = await response.text();
+                    sections.value = parseRecipes(content);
+                } catch (err) {
+                    error.value = err.message;
+                } finally {
+                    loading.value = false;
+                }
+            });
+
+            return {
+                loading,
+                error,
+                sections,
+                sectionColors
+            };
+        }
+    }).mount("#app");
+</script>
 
 </body>
-
-<!-- materialize.js; JavaScript at end of body for optimized loading-->
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-</script>
-
-<!-- load content by user -->
-<script>
-
-    let page = "";
-    let page_rows = 0;
-    let page_was_set = false;
-
-    function page_clear() {
-        page = "";
-        page_rows = 0;
-    }
-    function page_set() {
-        // only sets if valid
-        if(page_was_set)
-            return;
-        if(page_rows <= 0)
-            return;
-        
-        page_was_set = true;
-        
-        let page_container = document.getElementById("page_container");
-        page_container.innerHTML = page;
-    }
-    function page_add_row(name) {
-        console.log("row: <" + name + ">");
-        if(page_rows>0) {
-            page += "  </div>";
-            page += " </div>";
-            page += "</div>";
-        }
-        page_rows++;
-
-        let color = ["purple lighten-5",
-            "red lighten-5",
-            "cyan lighten-5",
-            "yellow lighten-5",
-            "blue lighten-5",
-            "green lighten-5",][page_rows%6];
-
-        // page += "<h2>"+name+"</h2>";
-        page += "<div class=\"card " + color + "\">";
-        page += " <div class=\"card-content black-text\">"
-        page += "  <span class=\"card-title\">"+name+"</span>";
-        page += "  <div class=\"row\">";
-    }
-
-    function page_add_item(name, link, img) {
-        console.log("item: <" + name + ";" + img + ">");
-        page += "<div class=\"col s12 m6 l4\">";
-        page += " <div class=\"card green lighten-5\">";
-        page += "  <div class=\"card-image\">";
-        page += "   <a href=\"" + link + "\">"
-        page += "    <img src=\"" + img + "\">"
-        page += "    <span class=\"card-title\">" + name + "</span>"
-        page += "   </a>"
-        page += "  </div>"
-        page += " </div>"
-        page += "</div>"
-    }
-    
-
-
-    let content_request = new XMLHttpRequest();
-    content_request.open('GET', 'https://raw.githubusercontent.com/renehorstmann/Rezepte/master/README.md');
-    content_request.onreadystatechange = function() {
-        content = content_request.responseText;
-
-        // check valid
-        if(!content.startsWith("# Rezepte")) {
-            return;
-        }
-        
-        page_clear();
-
-        // split lines
-        lines = content.split("\r\n");
-
-        for(let i=0; i<lines.length; i++) {
-            line = lines[i];
-
-            // new row
-            if(line.startsWith("## ")) {
-                line = line.substring(3);
-                page_add_row(line);
-            }
-
-            // new item
-            else if(line.startsWith("- [")) {
-                line = line.substring(3);
-                name_end = line.indexOf("](");
-                if(name_end < 1) {
-                    continue;
-                }
-                name = line.substring(0, name_end);
-                line = line.substring(name_end+2);
-                md_end = line.indexOf(".md)")
-                if(md_end < 1) {
-                    continue;
-                }
-                file = line.substring(0, md_end);
-                link = "https://github.com/renehorstmann/Rezepte/blob/master/" + file + ".md"
-                img = "https://raw.githubusercontent.com/renehorstmann/Rezepte/master/imgs/" + file + ".jpg"
-
-                page_add_item(name, link, img);
-            }
-
-        }
-
-        page_set();
-
-    }
-    content_request.send();
-</script>
-
 </html>
